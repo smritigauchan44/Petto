@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="#" class="logo">PETTO</a>
+        <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+        <ul class="nav-links">
+            <li><a href="#"><b>Home</b></a></li>
+            <li><a href="#"><b>About</b></a></li>
+            <li><a href="#"><b>Services</b></a></li>
+            <li><a href="#"><b>Gallery</b></a></li>
+            <li><a href="#"><b>Contact</b></a></li>
+        </ul>
+    </nav>
+
+    <script>
+        function toggleMenu() {
+            document.querySelector(".nav-links").classList.toggle("active");
+        }
+    </script>
+
+    <style>
+        /* Reset Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Adamina;
+        }
+        ul{
+            font-family: Arial;
+        }
+        
+        /* Navbar Styles */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f3cd23;
+            padding: 15px 20px;
+            color: white;
+        }
+        
+        .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+        }
+        
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+        
+        .nav-links li {
+            margin: 0 15px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+        }
+        
+        .nav-links a:hover {
+            background-color: #cab111;
+            border-radius: 5px;
+        }
+        
+        /* Hamburger Menu (Hidden by Default) */
+        .menu-toggle {
+            display: none;
+            font-size: 1.8em;
+            cursor: pointer;
+        }
+        
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background-color: #333;
+                width: 100%;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                text-align: center;
+            }
+            
+            .nav-links li {
+                margin: 10px 0;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+        }
+    </style>
+</body>
+</html>
